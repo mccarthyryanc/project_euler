@@ -20,18 +20,18 @@ def get_subarray(a,i,j,k):
 def get_lists(array):
     fin = []
     #get horizontals
-    fin += [array[i] for i in range(0,len(array))]
+    fin += [list(array[i]) for i in range(0,len(array))]
     #get verticals
-    fin += [array[:][:,i] for i in range(0,len(array))]
+    fin += [list(array[:][:,i]) for i in range(0,len(array))]
     # get diagonal
-    fin += array.diagonal()
+    fin.append(list(array.diagonal()))
     # get anti-diagonal
-    fin += array[:,::-1].diagonal()
+    fin.append(list(array[:,::-1].diagonal()))
     return fin
 
 #function to return max product of elements in list
 def get_max(lists):
-    prods = [temp.prod() for temp in lists]
+    prods = [np.array(temp).prod() for temp in lists]
     maximum = np.amax(prods)
     values = lists[prods.index(maximum)]
     return values, maximum
