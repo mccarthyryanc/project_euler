@@ -36,6 +36,10 @@ def get_max(lists):
     values = lists[prods.index(maximum)]
     return values, maximum
 
+#function write an array
+def write_array(array):
+    
+
 if __name__ == '__main__':
     #Some constants
     N = 20
